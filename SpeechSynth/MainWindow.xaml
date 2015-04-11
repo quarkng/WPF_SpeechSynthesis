@@ -1,0 +1,47 @@
+﻿<Window x:Class="SpeechSynth.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpeechSynth"
+        mc:Ignorable="d"
+        Title="Speech Synthesizer" Height="350" Width="525"
+        MinHeight="350" MinWidth="500" >
+    
+    
+    <DockPanel x:Name="dckMain">
+        <Label DockPanel.Dock="Top" Content="Speech Synthesis .Net" FontWeight="Bold" FontSize="14" />
+
+        <DockPanel DockPanel.Dock="top">
+            <Label Content="Text to Synthesize" DockPanel.Dock="Left"/>
+        <TextBox x:Name="txtText" DockPanel.Dock="Top" Width="{Binding dckMain.Width-30}" Margin="10"
+                 Text="The sixth sick sheik's sixth sheep's sick."/>
+        </DockPanel>
+        
+        <DockPanel DockPanel.Dock="top">
+            <Label Content="Rate" DockPanel.Dock="Left"/>
+            <Label DockPanel.Dock="Right" VerticalAlignment="Center" Content="{Binding Value, ElementName=sldRate, StringFormat={}{0:0}}" Width="40" FontSize="14"/>
+            <Slider x:Name="sldRate" Margin="10" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="Both"
+                    Value="0" Minimum="-10" Maximum="10" AutoToolTipPlacement="BottomRight"/>
+        </DockPanel>
+        
+        <DockPanel DockPanel.Dock="top">
+            <Label Content="Voice" DockPanel.Dock="Left" Margin=" 0,0,10,0"/>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="rbNeutral" Margin="10" GroupName="grpVoice"  IsChecked="True">Neutral</RadioButton>
+                <RadioButton x:Name="rbMale" Margin="10"  GroupName="grpVoice">Male</RadioButton>
+                <RadioButton x:Name="rbFemale" Margin="10" GroupName="grpVoice">Female</RadioButton>
+            </StackPanel>
+        </DockPanel>
+        
+        <Button x:Name="btnSave" DockPanel.Dock="Bottom" Content="Save to File" IsEnabled="False" Click="btnSave_Click" Margin="10"/>
+        <DockPanel DockPanel.Dock="Bottom" Margin="10">
+            <Button x:Name="btnSelectFile" DockPanel.Dock="Left" Content="Save to..." Click="btnSelectFile_Click" Margin="3"/>
+            <Label x:Name="lblFileName" DockPanel.Dock="Right" Content="Please select destination file"/>
+        </DockPanel>
+        
+        
+        <Button x:Name="btnSpeak" Content="Speak" Margin="10" Click="btnSpeak_Click" />
+
+    </DockPanel>
+</Window>
