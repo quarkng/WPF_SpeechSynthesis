@@ -10,7 +10,7 @@
     
     
     <DockPanel x:Name="dckMain">
-        <Label DockPanel.Dock="Top" Content="Speech Synthesis .Net" FontWeight="Bold" FontSize="14" />
+        <Label DockPanel.Dock="Top" Content="Speech Synthesis .NET" FontWeight="Bold" FontSize="14" />
 
         <DockPanel DockPanel.Dock="top">
             <Label Content="Text to Synthesize" DockPanel.Dock="Left"/>
@@ -34,8 +34,8 @@
             </StackPanel>
         </DockPanel>
         
-        <Button x:Name="btnSave" DockPanel.Dock="Bottom" Content="Save to File" IsEnabled="False" Click="btnSave_Click" Margin="10"/>
-        <DockPanel DockPanel.Dock="Bottom" Margin="10">
+        <Button x:Name="btnSave" DockPanel.Dock="Bottom" Content="Save to File" IsEnabled="False" Click="btnSave_Click" Margin="10,0,10,10" Height="30"/>
+        <DockPanel DockPanel.Dock="Bottom" Margin="10,10,10,5">
             <Button x:Name="btnSelectFile" DockPanel.Dock="Left" Content="Save to..." Click="btnSelectFile_Click" Margin="3"/>
             <Label x:Name="lblFileName" DockPanel.Dock="Right" Content="Please select destination file"/>
         </DockPanel>
